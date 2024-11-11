@@ -1,0 +1,243 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* 상단 버튼 스타일 */
+.buttons {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.buttons a {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons a:hover {
+    background-color: #2c3e50;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+table th {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #2c3e50;
+}
+
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafa;
+}
+
+table tr:hover {
+    background-color: #ecf0f1;
+}
+
+table td {
+    padding: 14px 15px;
+    text-align: center;
+    color: #555;
+    font-size: 13px;
+    border-bottom: 1px solid #e1e5e8;
+}
+
+table td:first-child,
+table th:first-child {
+    border-left: none;
+}
+
+table td:last-child,
+table th:last-child {
+    border-right: none;
+}
+
+/* 빈 테이블 메시지 스타일 */
+.table_blank {
+    padding: 25px;
+    color: #95a5a6;
+    font-style: italic;
+    background-color: #f0f2f3;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* 페이지 제목 스타일 */
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+}
+
+/* 제목 아래에 가로줄 추가 */
+h1:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    margin-top: 8px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* 제목에 마우스 호버 시 가로줄이 확대되는 효과 */
+h1:hover:after {
+    width: 100px;
+}
+
+/* 페이드인 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 공통 버튼 스타일 */
+.styled-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.styled-button:hover {
+    background-color: #2980b9;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.styled-button:active {
+    background-color: #1f6391;
+    transform: translateY(0px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 테두리 제거한 수정 버튼 스타일 */
+input[type="submit"] {
+    border: none;
+    outline: none;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+    background-color: #1f6391;
+    transform: translateY(0px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* 북마크 그룹 선택(선택 박스)과 북마크 추가하기 버튼을 타일링 */
+/* 선택 박스 스타일 */
+.bookmark-select {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    background-color: #f7f9fc;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+}
+
+.bookmark-select:hover {
+    border-color: #a6a6a6;
+}
+
+.bookmark-select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+/* 북마크 추가하기 버튼과 북마크 그룹 이름 추가 버튼의 스타일을 통일 */
+.bookmark-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff; /* 글씨 색을 흰색으로 설정 */
+    background-color: #b0b0b0 !important; /* 연한 회색 */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-submit:hover {
+    background-color: #9a9a9a !important; /* 호버 시 더 진한 회색 */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.bookmark-submit:active {
+    background-color: #7f7f7f !important; /* 클릭 시 더 진한 회색 */
+    transform: translateY(0);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}

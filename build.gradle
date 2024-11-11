@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // JUnit 의존성 - 테스트 프레임워크
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // Servlet API - 컴파일 전용 (웹 애플리케이션에서 서블릿 사용)
+    compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+
+    // Tomcat API - JSP 와 서블릿을 위한 API 제공 (컴파일 전용)
+    providedCompile 'org.apache.tomcat:tomcat-servlet-api:9.0.41'
+    providedCompile 'org.apache.tomcat:tomcat-jsp-api:9.0.41'
+
+    // SQLite JDBC - SQLite 데이터베이스를 사용하기 위한 JDBC 드라이버
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
+
+    // Gson - JSON 데이터 처리 라이브러리
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // Lombok - 컴파일 시간에 코드 생성을 위한 어노테이션 처리기
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+}
+
+test {
+    useJUnitPlatform()
+}
